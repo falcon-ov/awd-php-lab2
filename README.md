@@ -24,24 +24,24 @@
 
   ### Условие `index_part_one.php`:
   ```php
-   	<?php 
-   		print("Today is ".date("l")."<br><br>");
-   
-   		$dayOfWeekToday = date("l");
-   
-   		$dataBase = [
-   		'1' => [
-   			'fullname' => 'John Styles',
-   			'workDays' => ['Monday','Wednesday','Friday'],
-   			'workTime' => '8:00-12:00'
-   		],
-   		'2' => [
-   			'fullname' => 'Jane Doe',
-   			'workDays' => ['Tuesday','Thursday','Saturday'],
-   			'workTime' => '12:00-16:00'
-   		]
-   	];
-   	?>
+   	<?php
+	print ("Today is " . date("l") . "<br><br>");
+
+	$dayOfWeekToday = date("l");
+
+	$dataBase = [
+		'1' => [
+			'fullname' => 'John Styles',
+			'workDays' => ['Monday', 'Wednesday', 'Friday'],
+			'workTime' => '8:00-12:00'
+		],
+		'2' => [
+			'fullname' => 'Jane Doe',
+			'workDays' => ['Tuesday', 'Thursday', 'Saturday'],
+			'workTime' => '12:00-16:00'
+		]
+	];
+	?>
    ```
    Код для первой части лабораторной я вписывал в структру HTML страницы. В предстваленном коде выше я вывел на странице какой сегодня день `print("Today is ".date("l")."<br><br>");`.
    Обьявил и инициализировал переменную `$dayOfWeekToday` днем недели, который поулчаю из функции `date("l")` с аргументом `l`.
@@ -49,30 +49,30 @@
    
    ```php
    	<table>
-   		<tr>
-   			<th>№</th>
-   			<th>Фамилия Имя</th>
-   			<th>График работы</th>
-   		</tr>
-   
-   		<?php foreach ($dataBase as $workerId => $workerInfo) {
-   			if(in_array($dayOfWeekToday, $workerInfo['workDays'])){
-   				$workTime = $workerInfo['workTime'];
-   			}
-   			else {
-   				$workTime = "Нерабочий день";
-   			}
-   			echo "
-   					<tr>
-   					<td>$workerId</td>
-   					<td>{$workerInfo['fullname']}</td>
-   					<td>$workTime</td>
-   					</tr>
-   				";
-   			}
-   
-   		?>
-   	</table>
+		<tr>
+			<th>№</th>
+			<th>Фамилия Имя</th>
+			<th>График работы</th>
+		</tr>
+
+		<?php foreach ($dataBase as $workerId => $workerInfo) {
+			if (in_array($dayOfWeekToday, $workerInfo['workDays'])) {
+				$workTime = $workerInfo['workTime'];
+			} else {
+				$workTime = "Нерабочий день";
+			}
+			echo "
+					<tr>
+					<td>$workerId</td>
+					<td>{$workerInfo['fullname']}</td>
+					<td>$workTime</td>
+					</tr>
+				";
+		}
+
+		?>
+
+	</table>
   ```
    Создаю таблицу, прописываю первую строку таблицы в HTML, а последующие строки получаю из массива `$dataBase` и вывожу данные о сотруднике, при этом проверяю работает ли он сегодня , если работает вывожу график работы, если не работает, то вывожу `Нерабочий день`.
 
@@ -80,45 +80,45 @@
 
   ```php
    <?php
-   
-   $a = 0;
-   $b = 0;
-   
-   for ($i = 0; $i <= 5; $i++) {
-       $a += 10;
-       echo "a = ", $a, " ";
-       $b += 5;
-       echo "b = ", $b, "<br>";
-   }
-   echo "End of the loop: a = $a, b = $b <br><br>";
-   
-   $a = 0;
-   $b = 0;
-   $i = 0;
-   
-   while($i <= 5){
-       $a += 10;
-       echo "a = ", $a, " ";
-       $b += 5;
-       echo "b = ", $b, "<br>";
-       $i++;
-   }
-   echo "End of the loop: a = $a, b = $b <br><br>";
-   
-   $a = 0;
-   $b = 0;
-   $i = 0;
-   
-   do {
-       $a += 10;
-       echo "a = ", $a, " ";
-       $b += 5;
-       echo "b = ", $b, "<br>";
-       $i++;
-   } while($i <= 5);
-   echo "End of the loop: a = $a, b = $b <br><br>";
+
+$a = 0;
+$b = 0;
+
+for ($i = 0; $i <= 5; $i++) {
+    $a += 10;
+    echo "a = ", $a, " ";
+    $b += 5;
+    echo "b = ", $b, "<br>";
+}
+echo "End of the loop: a = $a, b = $b <br><br>";
+
+$a = 0;
+$b = 0;
+$i = 0;
+
+while ($i <= 5) {
+    $a += 10;
+    echo "a = ", $a, " ";
+    $b += 5;
+    echo "b = ", $b, "<br>";
+    $i++;
+}
+echo "End of the loop: a = $a, b = $b <br><br>";
+
+$a = 0;
+$b = 0;
+$i = 0;
+
+do {
+    $a += 10;
+    echo "a = ", $a, " ";
+    $b += 5;
+    echo "b = ", $b, "<br>";
+    $i++;
+} while ($i <= 5);
+echo "End of the loop: a = $a, b = $b <br><br>";
    ```
-Ничего сложного, вывожу резултаты итераций с помощью `for`, `while`, `do while`.
+Демонстрирую работу `for`, `while`, `do while` в php.
 
 ## Ответы на контрольные вопросы
 
@@ -129,9 +129,13 @@
 
 ## Список использованных источников
 
-(TODO)
+[www.w3schools.com](https://www.w3schools.com/)
+
+[www.php.net](https://www.php.net/manual/en/)
+
+[github.com/MSU-Courses/advanced-web-programming/](https://github.com/MSU-Courses/advanced-web-programming/blob/main)
+
+[chatgpt.com](https://chatgpt.com/)
 
 ## Дополнительные важные аспекты
-
-(TODO)
-
+`                               `

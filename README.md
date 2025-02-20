@@ -7,7 +7,10 @@
 3. Откройте нужный файл в `Visual Studio Code`
 4. Откройте терминал и запустите локальный сервер с помощью команды:
    ```sh
-   php -S localhost:8000
+   php -S localhost:8000 index_part_one.php
+   ```
+   ```sh
+   php -S localhost:8000 index_part_two.php
    ```
 5. Откройте браузер и перейдите по адресу `http://localhost:8000`.
 

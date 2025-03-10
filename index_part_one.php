@@ -10,17 +10,17 @@
 
 <body>
 	<?php
-	print ("Today is " . date("l") . "<br><br>");
+	// print ("Today is " . date("l") . "<br><br>");
 
 	$dayOfWeekToday = date("l");
 
 	$dataBase = [
-		'1' => [
+		[
 			'fullname' => 'John Styles',
 			'workDays' => ['Monday', 'Wednesday', 'Friday'],
 			'workTime' => '8:00-12:00'
 		],
-		'2' => [
+		[
 			'fullname' => 'Jane Doe',
 			'workDays' => ['Tuesday', 'Thursday', 'Saturday'],
 			'workTime' => '12:00-16:00'
@@ -42,16 +42,14 @@
 			} else {
 				$workTime = "Нерабочий день";
 			}
-			echo "
-					<tr>
-					<td>$workerId</td>
-					<td>{$workerInfo['fullname']}</td>
-					<td>$workTime</td>
-					</tr>
-				";
-		}
-
+			$workerId += 1;
 		?>
+			<tr>
+				<td><?php echo $workerId; ?></td>
+				<td><?php echo $workerInfo['fullname']; ?></td>
+				<td><?php echo $workTime; ?></td>
+			</tr>
+		<?php } ?>
 
 	</table>
 </body>
